@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music player</title>
+    <link rel="stylesheet" href="profile.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- <div class="open"></div> -->
+    <div class="content">
+      <div id="songlist" class="song-list">
+        <h3 style="text-align: center">Playlist</h3>
+        <span onclick="closeplaylist()" class="close">x</span>
+
+        <ol class="listofsong">
+          <li class="one">Ezhutha Kadhaiyo</li>
+          <span onclick="playingyoutubevedio1()" class="material-icons">
+            movie </span
+          ><a href="./music/Ezhutha Kadhaiyo.mp3" download=""
+             style="color: black;"><span class="material-icons" > download </span></a
+          >
+
+          <li class="two">Kangal Edho</li>
+          <span onclick="playingyoutubevedio2()" class="material-icons"> movie </span
+          ><a href="./music/Kangal-Edho.mp3" download="" style="color: black;"><span class="material-icons"> download </span></a>
+
+          <li class="three">Nee Kavidhaigala</li>
+          <span onclick="playingyoutubevedio3()" class="material-icons"> movie </span>
+          <a href="./music/Nee-Kavithaigala.mp3" download="" style="color: black;"><span class="material-icons"> download </span></a>
+
+          <li class="four">Nee Partha</li>
+          <span onclick="playingyoutubevedio4()"class="material-icons"> movie </span>
+          <a href="./music/Nee-Partha.mp3" download="" style="color: black;"><span class="material-icons"> download </span></a>
+          
+          <li class="five">Partha Mudhal</li>
+          <span onclick="playingyoutubevedio5()"class="material-icons"> movie </span>
+          <a href="./music/Partha-Muthal.mp3" download="" style="color: black;"><span class="material-icons"> download </span></a>
+
+          <li class="six">Theansudare</li>
+          <span onclick="playingyoutubevedio6()"class="material-icons"> movie </span>
+          <a href="./music/Theansudare.mp3" download="" style="color: black;"><span class="material-icons"> download </span></a>
+
+          
+          <li class="seven">Vinmeen Vidhaiyil</li>
+          <span onclick="playingyoutubevedio7()"class="material-icons"> movie </span>
+          <a href="./music/Vinmeen-Vithaiyil.mp3" download="" style="color: black;"><span class="material-icons"> download </span></a>
+
+          <li class="eight">Vintage Love</li>
+          <span onclick="playingyoutubevedio8()"class="material-icons"> movie </span>
+          <a href="./music/Vintage-Love.mp3" download="" style="color: black;"><span class="material-icons"> download </span></a>
+          
+          <li class="nine">Yaanji</li>
+          <span onclick="playingyoutubevedio9()"class="material-icons"> movie </span>
+          <a href="./music/Yaanji-MassTamilan.com.mp3" download="" style="color: black;"><span class="material-icons"> download </span></a>
+
+          
+          
+          
+          
+          <!-- <li><audio controls src="./music/Partha-Muthal.mp3"></li>
+        <li><audio controls src="./music/Theansudare.mp3"></li>
+        <li><audio controls src="./music/Vinmeen-Vithaiyil.mp3"></li>
+        <li><audio controls src="./music/Vintage-Love.mp3"></li>
+        <li><audio controls src="./music/Yaanji-MassTamilan.com.mp3"></li> -->
+        </ol>
+      </div>
+      <div class="top-bar">
+        <span id="playlistmusic" class="material-icons"> expand_more </span>
+
+        <span>Now playing</span>
+        <span class="material-icons"> more_horiz </span>
+      </div>
+
+      <!-- image-position -->
+      <div class="image-wrapper">
+        <div class="music-img">
+          <img src="./images/img1.jpg" alt="" />
+        </div>
+      </div>
+
+      <div class="music-titles">
+        <p class="name">6 Shorts</p>
+        <p class="artis">Aniruthu</p>
+      </div>
+
+      <div id="durationofsong" class="progress-details">
+        <div class="progress-bar">
+          <span></span>
+        </div>
+
+        <div class="time">
+          <span class="current">0:00</span>
+          <span class="final">5:30</span>
+        </div>
+      </div>
+
+      <div class="control-btn">
+        <span class="material-icons" id="repeat"> repeat </span>
+        <span class="material-icons" id="prev"> skip_previous </span>
+        <div class="play-pause">
+          <span class="material-icons" id="play_arrow"> play_arrow </span>
+        </div>
+        <span class="material-icons" id="skip_next"> skip_next </span>
+        <span class="material-icons" id="shuffle"> shuffle </span>
+      </div>
+    </div>
+
+    <div style="display: none" id="vediomainbox1" class="videomainbox">
+      <div style="position: absolute;top: 0rem;left: 0rem;background-color: rgb(0, 0, 0);height: 100vh;width: 100%;z-index: 2;" id="vedioplayingbox1" class="videoplayingbox">
+        <span onclick="backicon1()" style="font-size: 35px;position: relative; top: 4rem; left: 18rem;color: white;" class="material-icons">
+          arrow_back
+          </span>
+        <video id="video1" style="width: 1000px;height: 600px;position: absolute;z-index: 1;left: 18rem;top: 5rem;" src="./video/Ezhutha Kadhaiyo.mp4" controls></video>
+      </div>
+    </div>
+
+
+    <div style="display: none" id="vediomainbox2" class="videomainbox">
+      <div style="position: absolute;top: 0rem;left: 0rem;background-color: rgb(0, 0, 0);height: 100vh;width: 100%;z-index: 2;" id="vedioplayingbox2" class="videoplayingbox">
+        <span onclick="backicon2()" style="font-size: 35px;position: relative; top: 4rem; left: 18rem;color: white;" class="material-icons">
+          arrow_back
+          </span>
+        <video id="video2" style="width: 1000px;height: 600px;position: absolute;z-index: 1;left: 18rem;top: 5rem;" src="./video/Kangal-Edho.mp4" controls></video>
+      </div>
+    </div>
+
+    <div style="display: none" id="vediomainbox3" class="videomainbox">
+      <div style="position: absolute;top: 0rem;left: 0rem;background-color: rgb(0, 0, 0);height: 100vh;width: 100%;z-index: 2;" id="vedioplayingbox3" class="videoplayingbox">
+        <span onclick="backicon3()" style="font-size: 35px;position: relative; top: 4rem; left: 18rem;color: white;" class="material-icons">
+          arrow_back
+          </span>
+        <video id="video3" style="width: 1000px;height: 600px;position: absolute;z-index: 1;left: 18rem;top: 5rem;" src="./video/neekavidhaigal.mp4" controls></video>
+      </div>
+    </div>
+
+    <div style="display: none" id="vediomainbox4" class="videomainbox">
+      <div style="position: absolute;top: 0rem;left: 0rem;background-color: rgb(0, 0, 0);height: 100vh;width: 100%;z-index: 2;" id="vedioplayingbox4" class="videoplayingbox">
+        <span onclick="backicon4()" style="font-size: 35px;position: relative; top: 4rem; left: 18rem;color: white;" class="material-icons">
+          arrow_back
+          </span>
+        <video id="video4" style="width: 1000px;height: 600px;position: absolute;z-index: 1;left: 18rem;top: 5rem;" src="./video/nee partha.mp4" controls></video>
+      </div>
+    </div>
+
+    <div style="display: none" id="vediomainbox5" class="videomainbox">
+      <div style="position: absolute;top: 0rem;left: 0rem;background-color: rgb(0, 0, 0);height: 100vh;width: 100%;z-index: 2;" id="vedioplayingbox5" class="videoplayingbox">
+        <span onclick="backicon5()" style="font-size: 35px;position: relative; top: 4rem; left: 18rem;color: white;" class="material-icons">
+          arrow_back
+          </span>
+        <video id="video5" style="width: 1000px;height: 600px;position: absolute;z-index: 1;left: 18rem;top: 5rem;" src="./video/partha mudhal.mp4" controls></video>
+      </div>
+    </div>
+
+    <div style="display: none" id="vediomainbox6" class="videomainbox">
+      <div style="position: absolute;top: 0rem;left: 0rem;background-color: rgb(0, 0, 0);height: 100vh;width: 100%;z-index: 2;" id="vedioplayingbox6" class="videoplayingbox">
+        <span onclick="backicon6()" style="font-size: 35px;position: relative; top: 4rem; left: 18rem;color: white;" class="material-icons">
+          arrow_back
+          </span>
+        <video id="video6" style="width: 1000px;height: 600px;position: absolute;z-index: 1;left: 18rem;top: 5rem;" src="./video/theansudare.mp4" controls></video>
+      </div>
+    </div>
+
+    <div style="display: none" id="vediomainbox7" class="videomainbox">
+      <div style="position: absolute;top: 0rem;left: 0rem;background-color: rgb(0, 0, 0);height: 100vh;width: 100%;z-index: 2;" id="vedioplayingbox7" class="videoplayingbox">
+        <span onclick="backicon7()" style="font-size: 35px;position: relative; top: 4rem; left: 18rem;color: white;" class="material-icons">
+          arrow_back
+          </span>
+        <video id="video7" style="width: 1000px;height: 600px;position: absolute;z-index: 1;left: 18rem;top: 5rem;" src="./video/vinmeen.mp4" controls></video>
+      </div>
+    </div>
+
+    <div style="display: none" id="vediomainbox8" class="videomainbox">
+      <div style="position: absolute;top: 0rem;left: 0rem;background-color: rgb(0, 0, 0);height: 100vh;width: 100%;z-index: 2;" id="vedioplayingbox8" class="videoplayingbox">
+        <span onclick="backicon8()" style="font-size: 35px;position: relative; top: 4rem; left: 18rem;color: white;" class="material-icons">
+          arrow_back
+          </span>
+        <video id="video8" style="width: 1000px;height: 600px;position: absolute;z-index: 1;left: 18rem;top: 5rem;" src="./video/vintage.mp4" controls></video>
+      </div>
+    </div>
+
+    <div style="display: none" id="vediomainbox9" class="videomainbox">
+      <div style="position: absolute;top: 0rem;left: 0rem;background-color: rgb(0, 0, 0);height: 100vh;width: 100%;z-index: 2;" id="vedioplayingbox9" class="videoplayingbox">
+        <span onclick="backicon9()" style="font-size: 35px;position: relative; top: 4rem; left: 18rem;color: white;" class="material-icons">
+          arrow_back
+          </span>
+        <video id="video9" style="width: 1000px;height: 600px;position: absolute;z-index: 1;left: 18rem;top: 5rem;" src="./video/yaanji.mp4" controls></video>
+      </div>
+    </div>
+
+    
+
+    <audio src="music/music1.mp3" class="main-song"></audio>
+
+    <script src="./script.js"></script>
+    <script src="./playlist.js"></script>
+  </body>
+</html>
